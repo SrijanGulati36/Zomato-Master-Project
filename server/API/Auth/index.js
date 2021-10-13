@@ -1,7 +1,7 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-//import passport from "passport";
+import passport from "passport";
 
 const Router = express.Router();
 
@@ -9,7 +9,7 @@ const Router = express.Router();
 import { UserModel } from "../../database/user";
 
 //Validation
-//import { ValidateSignup, ValidateSignin } from "../../validation/auth";
+import { ValidateSignup, ValidateSignin } from "../../validation/auth";
 
 /*
 Route         /signup
@@ -21,7 +21,7 @@ Method        POST
 
 Router.post("/signup", async(req,res) => {
     try {
- // await ValidateSignup(req.body.credentials);
+     await ValidateSignup(req.body.credentials);
   
   await UserModel.findByEmailAndPhone(req.body.credentials);
   //DB
@@ -48,7 +48,7 @@ Router.post("/signup", async(req,res) => {
   
   Router.post("/signin", async(req,res) => {
     try {
-  //await ValidateSignin(req.body.credentials);
+    await ValidateSignin(req.body.credentials);
   
       const user = await UserModel.findByEmailAndPassword(
         req.body.credentials
@@ -73,13 +73,13 @@ Router.post("/signup", async(req,res) => {
   Method        GET
   */
   
-  /*Router.get("/google", passport.authenticate("google",{
+  Router.get("/google", passport.authenticate("google",{
   scope: [
     "https://www.googleapis.com/auth/userinfo.profile",
     "https://www.googleapis.com/auth/userinfo.email"
   ],
   })
-  );*/
+  );
   
   /*
   Route         /google/callback
@@ -89,10 +89,10 @@ Router.post("/signup", async(req,res) => {
   Method        GET
   */
   
-  /*Router.get("/google/callback", passport.authenticate("google",{failureRedirect: "/"}),
+  Router.get("/google/callback", passport.authenticate("google",{failureRedirect: "/"}),
   (req,res) => {
     return res.json({token: req.session.passport.user.token});
   }
-  );*/
+  );
 
 export default Router;
