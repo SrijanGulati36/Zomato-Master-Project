@@ -1,18 +1,24 @@
-import React from "react";
+import react from "react";
+import FoodTabs from "../Component/FoodTab"
 
-//Components
-import Navbar from "../Components/Navbar";
-import FoodTab from "../Components/FoodTab";
+//components
+import Navbar from "../Component/Navbar";
 
-const HomeLayout = (props) => {
-  return <>
-   <div className="container mx-auto lg:px-20">
-   <Navbar />
-   
+
+const HomeLayout = (props) =>{
+
+    return <>
+     <Navbar/>
+      <FoodTabs/>
+    <div className="container mx-auto px-4 lg:px-20">
     {props.children}
-   </div>
-   <FoodTab />
-  </>
+    </div>
+   
+    
+
+    
+    
+    </>
 };
 
 export default HomeLayout;

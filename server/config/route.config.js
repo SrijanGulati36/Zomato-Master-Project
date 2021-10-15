@@ -1,27 +1,32 @@
 import JwtPassport from "passport-jwt";
 
 //Database model
-import {UserModel} from "../database/user";
+import { UserModel } from "../database/user";
 
-const JwtStrategy = JwtPassport.Strategy;
+
+const JWTStrategy = JwtPassport.Strategy;
+
 const ExtractJwt = JwtPassport.ExtractJwt;
 
 const options = {
-  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: "ZomatoApp"
-};
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    secretOrKey: "Zomato App"
+}
 
 export default (passport) => {
-  passport.use(
-  new JwtStrategy(options, async(jwt__payload, done)=>{
-    try {
-      const doesUserExist = UserModel.findById(jwt__payload.user);
-      if(!doesUserExist) return done(null, false);
+    passport.use(
+        new JWTStrategy(options, async(jwt__payload, done) => {
+        try 
+        {
+         const     doesUserExist = UserModel.findById(jwt__payload.user);
+         if(!doesUserExist) return done(null, false);
 
-      return done(null, doesUserExist);
-    } catch (error) {
-      throw new Error(error);
-    }
-  })
-);
+         return done(null, doesUserExist);
+        } 
+        catch (error) 
+        {
+            throw new Error(error);
+        }
+    })
+    );
 };

@@ -1,21 +1,21 @@
 import { combineReducers } from "redux";
 
-import restaurant from "./restaurant/restaurant.reducer";
-import image from "./Image/Image.reducer";
-import reviews from "./Reviews/review.reducer";
-import user from "./User/user.reducer";
-import food from "./Food/Food.reducer";
-import cart from "./Cart/Cart.reducer";
-import order from "./Order/order.reducer";
+import RestaurantReducer from "./Restaurant/restaurant.reducer";
+import ImageReducer from "./Images/images.reducer";
+import ReviewReducer from "./Reviews/review.reducer";
+import UserReducer from "./User/user.reducer";
+import FoodReducer from "./Food/food.reducer";
+import AuthReducer from "./Auth/auth.reducer";
+import CartReducer from "./Cart/cart.reducer";
 
 const rootReducer = combineReducers({
-    restaurant,
-    image,
-    reviews,
-    user,
-    food,
-    cart,
-    order,
-  });
-  
+  RestaurantReducer,
+  ImageReducer,
+  ReviewReducer,
+  UserReducer,
+  FoodReducer,
+  AuthReducer,
+  CartReducer,
+});
+
 export default rootReducer;

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 .leaflet-container {
-  width: inherit;
-  height: inherit;
+    width: inherit;
+    height: inherit;
 }

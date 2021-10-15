@@ -1,0 +1,61 @@
+ import react from "react";
+
+const RestaurantCard = () => {
+    return <></>
+}
+
+export default RestaurantCard;
+
+
+<div className="container mx-auto px-4 lg:px-20">
+
+        
+    <div className="w-full  h-80 rounded-lg overflow-hidden md:hidden">
+            <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover rounded-lg transform hover:scale-110"
+            />
+        </div>
+
+        <div className="hidden w-full h-80 md:flex gap-1 ">
+        <div className="w-7/12 h-full overflow-hidden">
+            <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition duration-500"
+            />
+            </div>
+
+        <div className="w-1/6 h-full flex flex-col gap-1 object-cover rounded-lg overflow-hidden">
+            <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover overflow-hidden rounded-lg transform hover:scale-110 transition duration-500"
+                 />
+
+            <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition duration-500"
+                  />
+            </div>
+
+        <div className="w-1/6 h-full flex flex-col gap-1 object-cover rounded-lg overflow-hidden">
+           <div clas="w-full h-full relative">
+           <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover rounded-lg"
+                 />
+                <div className="absolute inset-0 bg-opacity-40 bg-black"></div>
+
+           </div>
+
+
+            <div className="w-full h-full relative">
+                
+            <img src="https://b.zmtcdn.com/data/pictures/chains/7/19358777/eb8abfd46d4e09506a45f101ba16de7e.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                 alt="restaurant image"
+                 className="w-full h-full object-cover rounded-lg"
+                  />
+            </div>
+            </div>
+
+        </div>
+    </div>

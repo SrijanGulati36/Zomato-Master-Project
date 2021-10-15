@@ -1,26 +1,31 @@
 import joi from "joi";
 
-export const ValidateSignup = (userData) => {
+//wont allow invalid data to get inside logic
+//do not write validation inside mongoose
+//do validation before hitting API logic
 
-const Schema = joi.object({
-  fullname: joi.string().required().min(4),
-  email: joi.string().email(),
-  password: joi.string().min(5),
-  address: joi.array().items(joi.object({detail: joi.string(), for:joi.string()})),
-  phoneNumber: joi.number()
-});
+export const ValidateSignUp = (userData) => {
 
-return Schema.validateAsync(userData);
+    const Schema = joi.object({
+        fullname: joi.string().required().min(5), 
+        email: joi.string().email().required(),
+        password: joi.string().min(5),
+        address: joi.array()
+                    .items(joi.object({detail: joi.string(), for: joi.string()})),
+        phoneNumber: joi.number(),
+    });
 
+    return Schema.validateAsync(userData);
 };
 
-export const ValidateSignin = (userData) => {
+export const ValidateSignIn = (userData) => {
 
-const Schema = joi.object({
-  email: joi.string().email().required(),
-  password: joi.string().min(5).required()
-});
+    const Schema = joi.object({
+        
+        email: joi.string().email().required(),
+        password: joi.string().min(5).required(),
+        
+    });
 
-return Schema.validateAsync(userData);
-
+    return Schema.validateAsync(userData);
 };
